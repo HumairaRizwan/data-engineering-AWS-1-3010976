@@ -6,10 +6,10 @@ table = dynamodb.Table('Employees')
 
 # update Department for Mark Wilbur from IT to Finance
 
-response = table.<provide method here>(
-    Key={'Name': <provide name here>, 'Email': <provide email here>},
+response = table.update_item(
+    Key={'Name':  'Mark Wilbur', 'Email': 'markwilbur@dataengineer.cloud'},
         ExpressionAttributeValues={
-            ':d': <provide new department here>
+            ':d': 'Finance'
         },
         UpdateExpression="set Department = :d",
     )
